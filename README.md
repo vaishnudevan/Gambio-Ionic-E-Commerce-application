@@ -1,6 +1,6 @@
 # Gambio-Ionic-E-Commerce-application
 
-This is cross platform E-Commerece mobile application written using ionic cordova framework. 
+This is cross platform E-Commerece mobile application written using ionic cordova framework. This application will communicate with Gambio CMS using REST API.
 
 <h3> Getting started</h3> 
 
