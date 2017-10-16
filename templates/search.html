@@ -1,0 +1,39 @@
+<ion-view>
+    <ion-title>List All Products</ion-title>
+
+
+    </div>
+
+
+
+    <ion-content>
+
+        <div class="list">
+
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+              <input  ng-model="products.num"  type="text" placeholder="Enter No. Items ">
+            </label>
+                <button ng-click="Search(products);" class="button button-small">
+              Submit
+            </button>
+            </div>
+
+            <div >
+                    <p>There number of products listed are: <strong>{{products.length}}</strong></p>
+                </div>
+
+            
+            <ion-list>
+                    <div class="item item-thumbnail-left item-button-right" ng-repeat="product in products" ui-sref="gmapp.product({productID: product.id})">
+                        <img ng-src="{{'http://gm.vaishnudevan.de/images/product_images/thumbnail_images/'+ product.image || 'https://placeimg.com/64/64/' + product.name}}" on-error-src="{{'https://placeimg.com/64/64/' + product.name}}" />
+                        <h2><strong>{{product.name}}</strong></h2>
+        
+        
+                    </div>
+                </ion-list>
+        
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,78 @@
+.h<ion-view view-title="SignUp">
+<div class='bar bar-subheader bar-positive'>
+  <h1 class="title">Fill out the information below</h1>
+</div>
+<ion-content class="has-subheader padding">
+
+<div class="list list-inset" class="list padding smart-form">
+  <div class="item item-divider">
+    Personal Information
+  </div>
+  <label class="item item-input item-select">
+    <span class="input-label">Gender</span>
+    <select ng-model="newUser.gender">
+      <option selected value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">First Name</span>
+    <input type="text" ng-model="newUser.first_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Last Name</span>
+    <input type="text" ng-model="newUser.last_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Email</span>
+    <input type="email" ng-model="newUser.email" ng-blur="checkUserEmail(newUser.email)">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password" ng-model="newUser.password">
+  </label>
+  <div class="item item-divider">
+    Address
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Street</span>
+    <input type="text" ng-model="newUser.street">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">House Number</span>
+    <input type="text" ng-model="newUser.houseNumber">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Address 2</span>
+    <input type="text" ng-model="newUser.additionalAddressInfo">
+  </label>
+  <label class="item item-input ">
+    <span class="input-label">Country</span>
+    <input type="text" ng-model="newUser.country">
+  </label>
+
+  <label class="item item-input ">
+    <span class="input-label">City</span>
+    <input type="text" ng-model="newUser.city">
+      
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Pincode</span>
+    <input type="text" ng-model="newUser.postcode">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Phone</span>
+    <input type="text" ng-model="newUser.telephone">
+  </label>
+  
+
+  <div class="button-bar">
+    <button class="button button-assertive button-block button-outline">Cancel</button>
+    <button class="button button-assertive button-block" ng-disabled="{{!newUser.isValid}}" ng-click="signUp(newUser)">Sign Up</button>
+  </div>
+</div>
+
+
+
+</ion-content>
+</ion-view>

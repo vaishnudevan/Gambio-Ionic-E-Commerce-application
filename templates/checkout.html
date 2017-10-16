@@ -1,0 +1,142 @@
+ <ion-view view-title="SignUp">
+<div class='bar bar-subheader bar-assertive'>
+  <h1 class="title">Checkout</h1>
+</div>
+<ion-content class="has-subheader padding">
+
+<div class="list list-inset" class="list padding smart-form">
+  <div class="item item-divider">
+    Personal Information
+  </div>
+  <label class="item item-input item-select">
+    <span class="input-label">Gender</span>
+    <select ng-model="newOrder.billing.gender">
+      <option selected value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">First Name</span>
+    <input type="text" ng-model="newOrder.billing.first_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Last Name</span>
+    <input type="text" ng-model="newOrder.billing.last_name">
+  </label>
+  <div class="item item-divider">
+    Address
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Street</span>
+    <input type="text" ng-model="newOrder.billing.street">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">House Number</span>
+    <input type="text" ng-model="newOrder.billing.houseNumber">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Address 2</span>
+    <input type="text" ng-model="newOrder.billing.additionalAddressInfo">
+  </label>
+  <label class="item item-input ">
+    <span class="input-label">Country</span>
+    <input type="text" ng-model="newOrder.billing.country">
+  </label>
+
+  <label class="item item-input ">
+    <span class="input-label">City</span>
+    <input type="text" ng-model="newOrder.billing.city">
+      
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Pincode</span>
+    <input type="text" ng-model="newOrder.billing.postcode">
+  </label>
+ 
+
+  <ion-checkbox ng-model="newOrder.billingToShipping" ng-change="switchBillingToShipping()">Shipping address is same</ion-checkbox>
+  <div class="item item-divider" ng-hide="newOrder.billingToShipping">
+    Shipping Information
+  </div>
+
+
+   <label class="item item-input item-select" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Gender</span>
+    <select ng-model="newOrder.shipping.gender">
+      <option selected value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">First Name</span>
+    <input type="text" ng-model="newOrder.shipping.firstname">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Last Name</span>
+    <input type="text" ng-model="newOrder.shipping.lastname">
+  </label>
+
+  <div class="item item-divider" ng-hide="newOrder.billingToShipping">
+    Address
+  </div>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Street</span>
+    <input type="text" ng-model="newOrder.shipping.street">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">House Number</span>
+    <input type="text" ng-model="newOrder.shipping.houseNumber">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Address 2</span>
+    <input type="text" ng-model="newOrder.shipping.additionalAddressInfo">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Country</span>
+    <input type="text" ng-model="newOrder.shipping.country">
+  </label>
+
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">City</span>
+    <input type="text" ng-model="newOrder.shipping.city">
+      
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Pincode</span>
+    <input type="text" ng-model="newOrder.shipping.postcode">
+  </label>
+
+
+
+  <div class="item item-divider">
+    Payment Information
+  </div>
+  <label class="item item-input item-select">
+    <span class="input-label">Payment Mode</span>
+    <select ng-model="newOrder.paymentMethod">
+      <option ng-repeat="method in paymentMethods">{{method.title}}</option>
+    </select>
+  </label>
+
+
+  <div class="item item-divider">
+    Shipping Information
+  </div>
+  <label class="item item-input item-select">
+    <span class="input-label">Shipping provider</span>
+    <select ng-model="newOrder.shippingMethod">
+      <option ng-repeat="method in shippingMethods">{{method.title}}</option>
+    </select>
+  </label>
+
+
+  <div class="button-bar">
+    <button class="button button-assertive button-block button-outline">Cancel</button>
+    <button class="button button-assertive button-block" ng-click="placeOrder(newOrder)">Place Order</button>
+  </div>
+</div>
+
+
+
+</ion-content>
+</ion-view>

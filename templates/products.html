@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-title>List All Products</ion-title>
+    <ion-content>
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="refreshProducts()" refreshingSpinner="circles" refreshing-text="Loading products ..."></ion-refresher>
+        <ion-list>
+            <div class="item item-thumbnail-left item-button-right" ng-repeat="product in products" ui-sref="gmapp.product({productID: product.id})">
+                <img ng-src="{{'http://gm.vaishnudevan.de/images/product_images/thumbnail_images/'+ product.image || 'https://placeimg.com/64/64/' + product.name}}" on-error-src="{{'https://placeimg.com/64/64/' + product.name}}" />
+                <h2><strong>{{product.title}}</strong></h2>                                                                                             
+                <span ng-bind-html="product.name"></span>
+               <!-- <span ng-bind-html="product.short_description"></span> -->
+            </div>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="allowLoadmore" immediate-check="false">
+        </ion-infinite-scroll>
+        <!-- loadMore() - To load more products ng-if - loadmore() function is called when the conditon  ng-if="allowLoadmore" is true. immedide check- to preventing allowloadmore when the app load first. !-->
+    </ion-content>
+
+</ion-view>

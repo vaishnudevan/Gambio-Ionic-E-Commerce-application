@@ -1,0 +1,15 @@
+
+<ion-view>
+	<ion-nav-title>Products by Category</ion-nav-title>
+
+  <ion-content>
+    <div class="list">
+
+	    <div class="item item-thumbnail-left item-button-right" ng-repeat="product in categoriesproducts" ui-sref="gmapp.product({productID: product.id})">
+	       <img  ng-src="{{'http://gm.vaishnudevan.de/images/product_images/info_images/'+ product.image || 'https://placeimg.com/64/64/' + product.title }}" on-error-src="{{'https://placeimg.com/64/64/' + product.name}}" />   
+                           <h2><strong>{{product.name}}</strong></h2>
+                           <span ng-bind-html="product.price_html"></span>
+                           <span ng-bind-html="product.short_description"></span>            
+	</div>
+  </ion-content>
+</ion-view>

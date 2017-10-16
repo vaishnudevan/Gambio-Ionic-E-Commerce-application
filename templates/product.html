@@ -1,0 +1,88 @@
+<ion-view>
+    <ion-nav-title>{{product.name.de}}</ion-nav-title>
+    <ion-content>
+
+        <ion-list class="list-card">
+            <ion-item class="item-body">
+                <ion-slide-box show-pager="true" does-continue="true" pager-click="true" auto-play="true" slide-interval="4000">
+                    <ion-slide ng-repeat="img in images">
+                        <center>
+                            <img ng-src="{{'http://gm.vaishnudevan.de/images/product_images/info_images/'+ img.filename}}" on-error-src="{{'https://placeimg.com/350/350/' + product.name.de}}"
+                                style="width: 100%;height: auto;" /></center>
+                    </ion-slide>
+                </ion-slide-box>
+            </ion-item>
+        </ion-list>
+        <div class="list card">
+            <div class="item item-body">
+                <div class="row">
+                    <div class="col-50">
+                        <h3><strong>{{product.name.de}}</strong></h3>
+                    </div>
+                    <div class="col-50">
+
+
+                        <ion-item class="item item-block item-wp item-input input-has-value item-input-has-value">
+                            <div class="item-inner">
+                                <div class="input-wrapper">
+                                    <ion-input placeholder="No of product" type="number" class="input input-wp">
+                                        <input ng-model="product.count"  class="text-input text-input-wp" type="number" aria-labelledby="lbl-2" min="1" max="50" autocomplete="off" autocorrect="off" placeholder="No.1"></ion-input>
+                                </div>
+                            </div>
+                            <div class="button-effect"></div>
+                        </ion-item>
+
+
+                        <button class="button button-positive button-block button-assertive" ng-click="addtoCart(product)">Add To Cart</button>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-50">
+                        <h2><strong>Price </strong></h2>
+                        <h2>{{product.price | number : 2}} €</h2>
+                    </div>
+                    <div class="col-50">
+                        <h2><strong>Shipping Costs</strong></h2>
+                        <h2>{{product.shippingCosts}} €</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="list card">
+            <div class="item item-body">
+                <h2>Short Description</h2>
+                <p ng-bind-html="product.shortDescription.de"> </p>
+            </div>
+        </div>
+
+        <div class="list card">
+            <div class="item item-body">
+                <h2>Description</h2>
+                <p ng-bind-html="product.description.de"> </p>
+            </div>
+        </div>
+
+
+
+        <div class="list card">
+            <div class="item item-body">
+                <h2>Product Specifications</h2>
+                <table style="min-width:100%;">
+                    <tr class="row">
+                        <td class="col-50"><b>Product Model</b> {{product.productModel}}
+                        </td>
+                        <td class="col-50"><b>Product Quantity</b><br> {{product.quantity}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>
