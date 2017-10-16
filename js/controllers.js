@@ -100,8 +100,6 @@ angular.module('starter.controllers', ['starter.services'])
 
     }
   })
-
-
   .controller('CategoriesCtrl', function ($scope, DataService, $http) {
 
     DataService.data('categories', 'getcontents').then(function (d) {
@@ -110,8 +108,6 @@ angular.module('starter.controllers', ['starter.services'])
     });
 
   })
-
-
   .controller('categoryprdsCtrl', function ($scope, DataService, $stateParams, $ionicLoading) {
 
     $ionicLoading.show({ template: '<ion-spinner></ion-spinner>' });
@@ -211,8 +207,6 @@ angular.module('starter.controllers', ['starter.services'])
 
 
     }
-
-
   })
 
   .controller('ProductCtrl', function ($scope, DataService, $ionicSlideBoxDelegate, $stateParams, $localStorage, $rootScope, $ionicLoading) {
@@ -267,8 +261,6 @@ angular.module('starter.controllers', ['starter.services'])
     } */
 
   })
-
-
 
   .controller('SignUpCtrl', function ($scope, $ionicPopup, $state, DataService, $ionicLoading) {
 
